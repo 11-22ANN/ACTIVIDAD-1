@@ -1,0 +1,55 @@
+/* CSS */
+body {
+  margin: 0;
+  background: #111;
+  overflow: hidden;
+  height: 100vh;
+}
+
+/* Pelotas base */
+.ball {
+  width: 100px;   /* tamaño fijo grande */
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  animation: bounceY 4s infinite ease-in-out alternate,
+             bounceX 6s infinite linear alternate,
+             colorChange 5s infinite alternate;
+}
+
+/* Pelota 1 */
+.ball1 {
+  background: pink;
+  top: 0;
+  left: 0;
+}
+
+/* Pelota 2 */
+.ball2 {
+  background: lightblue;
+  bottom: 0;
+  right: 0;
+  animation-delay: 2s, 1s, 0.5s; 
+  /* desfase para que no se muevan igual */
+}
+
+/* Rebote vertical */
+@keyframes bounceY {
+  from { top: 0; }
+  to { top: calc(100vh - 100px); }
+}
+
+/* Rebote horizontal */
+@keyframes bounceX {
+  from { left: 0; }
+  to { left: calc(100vw - 100px); 
+}
+
+/* Cambio de color */
+@keyframes colorChange {
+  0% { background: pink; }
+  25% { background: yellow; }
+  50% { background: cyan; }
+  75% { background: violet; }
+  100% { background: orange; }
+}
